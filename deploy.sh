@@ -3,10 +3,10 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $SCRIPT_DIR
 
-git pull
+git pull --ff-only
 
-poetry install --without=dev --sync
+/home/momo/.local/bin/poetry install --without=dev --sync
 
-POETRY_PYTHON="$(poetry run which python)"
+POETRY_PYTHON="$(/home/momo/.local/bin/poetry run which python)"
 
 sudo "${POETRY_PYTHON}" -m plantotron install
