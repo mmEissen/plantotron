@@ -6,4 +6,7 @@ cd $SCRIPT_DIR
 git pull
 
 poetry install --without=dev --sync
-poetry run sudo python -m plantotron install
+
+POETRY_PYTHON="$(poetry run which python)"
+
+sudo "$(POETRY_PYTHON)" -m plantotron install
