@@ -4,6 +4,7 @@ import click
 import sys
 import getpass
 
+from plantotron import _plantotron
 
 ROOT_DIR_NAME = os.path.dirname(os.path.dirname(__file__))
 
@@ -15,7 +16,7 @@ def cli() -> None:
 
 @cli.command()
 def run() -> None:
-    pass
+    _plantotron.main()
 
 
 SERVICE_TEMPLATE = """
