@@ -46,7 +46,7 @@ void loop() {
     get_sensor,
     "get_sensor: Get sensor value. @plant_id: The plant ID of which to read the sensor value @return: The value of the sensor, or -1 if the plant ID is out of range.",
     open_valve,
-    "open_valve: Open a valve. @plant_id: The plant ID for which to open the valve @milliseconds: The number of milliseconds to keep the sensor open for. @return void."
+    "open_valve: Open a valve. @plant_id: The plant ID for which to open the valve @milliseconds: The number of milliseconds to keep the sensor open for"
   );
   maybe_close_valves();
 }

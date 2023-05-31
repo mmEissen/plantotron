@@ -1,0 +1,14 @@
+[Unit]
+Description=Water my plants
+After=network-online.target
+
+[Service]
+ExecStart={exec_start}
+WorkingDirectory={working_directory}
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User={user}
+
+[Install]
+WantedBy=multi-user.target
