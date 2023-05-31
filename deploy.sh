@@ -5,8 +5,8 @@ cd $SCRIPT_DIR
 
 git pull --ff-only
 
-/home/momo/.local/bin/poetry install --without=dev --sync
+/home/momo/.local/bin/poetry install -n --ansi --without=dev --sync
 
-POETRY_PYTHON="$(/home/momo/.local/bin/poetry run which python)"
+POETRY_PYTHON="$(/home/momo/.local/bin/poetry run -n --ansi which python)"
 
-sudo "${POETRY_PYTHON}" -m plantotron install
+/usr/bin/sudo "${POETRY_PYTHON}" -m plantotron install
