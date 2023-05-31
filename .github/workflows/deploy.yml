@@ -15,4 +15,4 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          /home/momo/plantotron/deploy
+          /home/momo/plantotron/deploy.sh
