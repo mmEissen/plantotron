@@ -49,7 +49,7 @@ def install() -> None:
             )
         )
     subprocess.run(["systemctl", "enable", "plantotron.service"], check=True)
-    subprocess.run(["systemctl", "start", "plantotron.service"], check=True)
+    subprocess.run(["systemctl", "restart", "plantotron"], check=True)
 
 
 cli()
