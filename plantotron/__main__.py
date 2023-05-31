@@ -36,6 +36,7 @@ User={user}
 WantedBy=multi-user.target
 """
 
+
 @cli.command()
 def install() -> None:
     with open("/lib/systemd/system/plantotron.service", "w") as service_file:
@@ -47,12 +48,8 @@ def install() -> None:
                 user=getpass.getuser(),
             )
         )
-    subprocess.run([
-        "systemctl", "enable", "plantotron.service"
-    ], check=True)
-    subprocess.run([
-        "systemctl", "start", "plantotron.service"
-    ], check=True)
+    subprocess.run(["systemctl", "enable", "plantotron.service"], check=True)
+    subprocess.run(["systemctl", "start", "plantotron.service"], check=True)
 
 
 cli()
