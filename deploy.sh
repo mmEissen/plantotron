@@ -9,4 +9,4 @@ poetry install --without=dev --sync
 
 POETRY_PYTHON="$(poetry run which python)"
 
-sudo "$(POETRY_PYTHON)" -m plantotron install
+sudo "${POETRY_PYTHON}" -m plantotron install
