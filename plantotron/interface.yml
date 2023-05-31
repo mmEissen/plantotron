@@ -1,0 +1,38 @@
+endianness: <
+methods:
+  get_sensor:
+    doc: Get sensor value.
+    index: 0
+    name: get_sensor
+    parameters:
+    - doc: The plant ID of which to read the sensor value
+      fmt: B
+      name: plant_id
+      typename: int
+    return:
+      doc: The value of the sensor, or -1 if the plant ID is out of range.
+      fmt: h
+      typename: int
+  open_valve:
+    doc: Open a valve.
+    index: 1
+    name: open_valve
+    parameters:
+    - doc: The plant ID for which to open the valve
+      fmt: B
+      name: plant_id
+      typename: int
+    - doc: The number of milliseconds to keep the sensor open for
+      fmt: H
+      name: milliseconds
+      typename: int
+    return:
+      doc: ''
+      fmt: ''
+      typename: ''
+protocol: simpleRPC
+size_t: H
+version: !!python/tuple
+- 3
+- 0
+- 0
