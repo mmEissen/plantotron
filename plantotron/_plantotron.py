@@ -16,9 +16,9 @@ class Application:
             self.interface.open(interface_file)
 
     def loop(self) -> None:
-        datetime.datetime.now()
-
-        _spreadsheet.append_sensor_data(datetime.datetime.now(), )
+        now = datetime.datetime.now()
+        data = tuple(self.interface.get_sensor(i) for i in range(4))
+        _spreadsheet.append_sensor_data(now, data)
 
     def run_forever(self) -> None:
         while True:
