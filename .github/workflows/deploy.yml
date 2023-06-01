@@ -16,4 +16,15 @@ jobs:
         port: ${{ secrets.PORT }}
         envs: GITHUB_SHA
         script: |
-          /home/momo/plantotron/deploy.sh
+          cd /home/momo/plantotron
+          date
+          git fetch
+          date
+          git checkout $GITHUB_SHA
+          date
+          /home/momo/.local/bin/poetry install -n --ansi --without=dev --sync
+          date
+          POETRY_PYTHON="$(/home/momo/.local/bin/poetry run -n --ansi which python)"
+          date
+          /usr/bin/sudo "${POETRY_PYTHON}" -m plantotron install
+          date
