@@ -26,7 +26,7 @@ class Application:
         for _ in range(n - 1):
             time.sleep(delta_t)
             data.append(self._read_all_sensors())
-        return tuple(sum(samples) for samples in zip(*data))
+        return tuple(sum(samples) / n for samples in zip(*data))
 
     def loop(self) -> None:
         now = datetime.datetime.now()
