@@ -16,3 +16,4 @@ POETRY_PYTHON="$(/home/momo/.local/bin/poetry run -n --ansi which python)"
 date
 /usr/bin/sudo "${POETRY_PYTHON}" -m plantotron install
 date
+
