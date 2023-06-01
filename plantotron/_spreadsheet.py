@@ -14,6 +14,8 @@ SENSOR_DATA_SHEET = "sensor_data"
 SENSOR_DATA_RANGE = "A:E"
 
 
+SensorData = tuple[float, float, float, float]
+
 @functools.cache
 def _credentials() -> service_account.Credentials:
     return service_account.Credentials.from_service_account_file(
@@ -26,7 +28,7 @@ def _service():
     return googleapiclient.discovery.build("sheets", "v4", credentials=_credentials())
 
 
-def append_sensor_data(time: datetime.datetime, data: tuple[int, int, int, int]):
+def append_sensor_data(time: datetime.datetime, data: tuple[float, float, float, float]):
     request = _service().spreadsheets().values().append(
         spreadsheetId=SPREADSHEET_ID,
         range=f"{SENSOR_DATA_SHEET}!{SENSOR_DATA_RANGE}",
