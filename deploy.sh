@@ -12,3 +12,4 @@ git checkout $GITHUB_SHA
 
 POETRY_PYTHON="$(/home/momo/.local/bin/poetry run -n --ansi which python)"
 /usr/bin/sudo "${POETRY_PYTHON}" -m plantotron install
+
