@@ -14,10 +14,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         privateKey: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.PORT }}
-        command: |
-          cd /home/momo/plantotron
-          git fetch
-          git checkout $GITHUB_SHA
-          /home/momo/.local/bin/poetry install -n --ansi --without=dev --sync
-          POETRY_PYTHON="$(/home/momo/.local/bin/poetry run -n --ansi which python)"
-          /usr/bin/sudo "${POETRY_PYTHON}" -m plantotron install
+        command: echo hello
