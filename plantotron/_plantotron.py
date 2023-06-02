@@ -3,7 +3,6 @@ import os
 import time
 from plantotron import _spreadsheet
 import simple_rpc
-import simple_pid
 
 
 DEVICE = "/dev/ttyACM0"
@@ -18,7 +17,7 @@ class Application:
         self.config = _spreadsheet.load_config()
 
     def plant_ids(self) -> tuple[int, int, int, int]:
-        return tuple(sorted(self.config.pid_configs.keys()))
+        return tuple(sorted(self.config.plant_configs.keys()))
 
     def _read_all_sensors(self) -> _spreadsheet.SensorData:
         return tuple(
